@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Meta de los Guerreros</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --obsidiana:#0A090C;
+  --tezontle:#170F11;
+  --tezontle-2:#221618;
+  --estuco:#F2E9D8;
+  --estuco-2:#B8AC97;
+  --estuco-3:#7C7365;
+  --oro:#C99A3C;
+  --oro-2:#E8C476;
+  --tlaloc:#3E82AA;
+  --cinabrio:#B8402E;
+  --borde:#33262A;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--obsidiana);
+  color:var(--estuco);
+  font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.wrap{max-width:460px;margin:0 auto;padding:0 0 40px}
+
+/* ---------- greca ---------- */
+.greca{display:block;width:100%;height:15px;color:var(--oro);opacity:.75}
+.greca svg{display:block;width:100%;height:15px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding:34px 22px 30px;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(201,154,60,.13) 0%, rgba(201,154,60,0) 62%),
+    linear-gradient(180deg, var(--tezontle) 0%, var(--obsidiana) 100%);
+  border-bottom:1px solid var(--borde);
+  overflow:hidden;
+}
+.hero .templo{
+  position:absolute;left:50%;top:44px;transform:translateX(-50%);
+  width:330px;opacity:.09;color:var(--estuco);pointer-events:none;
+}
+.hero > *{position:relative}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--oro);margin:0 0 4px;
+}
+.eyebrow-2{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--estuco-3);margin:0 0 22px;
+}
+h1{
+  font-family:"Anton",Impact,sans-serif;font-weight:400;
+  font-size:clamp(38px,12.5vw,54px);line-height:.92;
+  letter-spacing:.005em;text-transform:uppercase;
+  margin:0 0 16px;color:var(--estuco);text-wrap:balance;
+}
+.finisher{
+  display:inline-block;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--oro);color:var(--oro-2);
+  padding:5px 11px;margin-bottom:26px;
+}
+.tiempo-label{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--estuco-3);
+  margin:0 0 2px;
+}
+.tiempo{
+  font-family:"Anton",Impact,sans-serif;font-weight:400;
+  font-size:clamp(46px,16vw,66px);line-height:1;
+  color:var(--oro-2);margin:0;font-variant-numeric:tabular-nums;
+  letter-spacing:.01em;
+}
+
+/* ---------- datos ---------- */
+.grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--borde);
+}
+.grid div{
+  padding:15px 22px;
+  border-bottom:1px solid var(--borde);
+}
+.grid div:nth-child(odd){border-right:1px solid var(--borde)}
+.grid dt{
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--estuco-3);
+  margin:0 0 3px;
+}
+.grid dd{
+  margin:0;font-family:"IBM Plex Mono",monospace;font-size:19px;
+  font-variant-numeric:tabular-nums;color:var(--estuco);
+}
+.grid dd small{font-size:11px;color:var(--estuco-2);letter-spacing:.04em}
+
+/* ---------- secciones ---------- */
+section{padding:38px 22px 8px}
+h2{
+  font-family:"Anton",Impact,sans-serif;font-weight:400;
+  font-size:24px;line-height:1.1;letter-spacing:.01em;
+  text-transform:uppercase;color:var(--estuco);
+  margin:0 0 14px;text-wrap:balance;
+}
+h2 .marca{color:var(--oro)}
+p{margin:0 0 14px;color:var(--estuco-2)}
+p.destacado{
+  color:var(--estuco);font-size:17px;
+  border-left:2px solid var(--oro);padding-left:14px;
+  font-style:italic;
+}
+.regla{height:1px;background:var(--borde);margin:26px 22px 0}
+
+/* ---------- lista de datos ---------- */
+.lista{list-style:none;margin:0;padding:0}
+.lista li{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:11px 0;border-bottom:1px solid var(--borde);
+  align-items:baseline;
+}
+.lista li:last-child{border-bottom:0}
+.lista .k{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--estuco-3);
+  flex:0 0 auto;
+}
+.lista .v{text-align:right;color:var(--estuco);font-size:15px}
+
+/* ---------- símbolos de la medalla ---------- */
+.simbolos{display:grid;gap:1px;background:var(--borde);border:1px solid var(--borde);margin-top:4px}
+.simbolos article{background:var(--tezontle);padding:14px 16px}
+.simbolos h3{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;margin:0 0 4px;
+}
+.simbolos p{margin:0;font-size:14px;line-height:1.5}
+.s-sol h3{color:var(--oro)}
+.s-ser h3{color:var(--tlaloc)}
+.s-ajo h3{color:var(--cinabrio)}
+.s-esp h3{color:var(--estuco)}
+
+/* ---------- pie de marca ---------- */
+.marca-pie{
+  margin-top:30px;padding:24px 22px 26px;
+  background:var(--tezontle);border-top:1px solid var(--borde);
+  text-align:center;
+}
+.marca-pie .logo{
+  font-family:"Anton",Impact,sans-serif;font-size:19px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--estuco);margin:0 0 6px;
+}
+.marca-pie p{font-size:13px;color:var(--estuco-3);margin:0 auto;max-width:32ch}
+
+/* ---------- generador (solo demo) ---------- */
+#gen{display:none;padding:34px 22px 20px;border-top:1px solid var(--borde);margin-top:30px}
+#gen.on{display:block}
+.demo-aviso{
+  margin:0 0 20px;padding:11px 14px;
+  border:1px dashed var(--oro);color:var(--oro-2);
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;text-align:center;
+}
+.campo{margin-bottom:12px}
+.campo label{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--estuco-3);margin-bottom:4px;
+}
+.campo input{
+  width:100%;padding:10px 12px;font-size:16px;
+  font-family:"IBM Plex Mono",monospace;
+  background:var(--obsidiana);color:var(--estuco);
+  border:1px solid var(--borde);border-radius:0;
+}
+.campo input:focus{outline:2px solid var(--oro);outline-offset:1px;border-color:var(--oro)}
+.botones{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+button{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:11px 16px;cursor:pointer;border-radius:0;
+  background:var(--oro);color:var(--obsidiana);border:1px solid var(--oro);
+  font-weight:500;
+}
+button.sec{background:transparent;color:var(--oro-2)}
+button:focus-visible{outline:2px solid var(--estuco);outline-offset:2px}
+#salida{
+  margin-top:16px;padding:12px 14px;background:var(--tezontle-2);
+  border:1px solid var(--borde);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.6;
+  word-break:break-all;color:var(--oro-2);user-select:all;
+}
+#aviso-copia{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--estuco-3);margin-top:10px;min-height:14px}
+
+.fade{opacity:0;transform:translateY(8px);animation:sube .6s ease forwards}
+.fade:nth-child(2){animation-delay:.06s}
+.fade:nth-child(3){animation-delay:.12s}
+@keyframes sube{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .fade{animation:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="greca" aria-hidden="true">
+    <svg viewBox="0 0 240 15" preserveAspectRatio="none">
+      <defs>
+        <pattern id="gr" x="0" y="0" width="24" height="15" patternUnits="userSpaceOnUse">
+          <path d="M0,13.5 V2 H21 V9.5 H8.5 V6 H16"
+                fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </pattern>
+      </defs>
+      <rect width="240" height="15" fill="url(#gr)"/>
+    </svg>
+  </div>
+
+  <header class="hero">
+    <svg class="templo" viewBox="0 0 135 90" aria-hidden="true">
+      <g fill="currentColor">
+        <rect x="37.5" y="0"  width="28" height="20"/>
+        <rect x="69.5" y="0"  width="28" height="20"/>
+        <rect x="27"   y="20" width="81"  height="11.5"/>
+        <rect x="19.5" y="31.5" width="96" height="11.5"/>
+        <rect x="12"   y="43" width="111" height="11.5"/>
+        <rect x="4.5"  y="54.5" width="126" height="11.5"/>
+        <rect x="0"    y="66" width="135" height="17"/>
+      </g>
+      <g fill="var(--obsidiana)">
+        <rect x="36" y="20" width="27" height="46"/>
+        <rect x="72" y="20" width="27" height="46"/>
+      </g>
+    </svg>
+
+    <p class="eyebrow fade">XLIII Maratón de la Ciudad de México</p>
+    <p class="eyebrow-2 fade">30 de agosto de 2026 · 42.195 km</p>
+    <h1 id="nombre" class="fade">Luis Ángel</h1>
+    <span class="finisher">Finisher</span>
+    <p class="tiempo-label">Tiempo oficial</p>
+    <p class="tiempo" id="tiempo">04:12:36</p>
+  </header>
+
+  <dl class="grid">
+    <div><dt>Ritmo</dt><dd id="ritmo">5:59 <small>min/km</small></dd></div>
+    <div><dt>Velocidad</dt><dd id="vel">10.02 <small>km/h</small></dd></div>
+    <div><dt>Dorsal</dt><dd id="dorsal">12480</dd></div>
+    <div><dt>Categoría</dt><dd id="categoria" style="font-size:14px">Libre varonil</dd></div>
+  </dl>
+
+  <section>
+    <h2>El Templo Mayor es la meta<br>de los guerreros</h2>
+    <p>Para los mexicas el Templo Mayor no era un edificio: era el <strong>Coatepec</strong>, el cerro donde Huitzilopochtli nació ya armado y venció a los cuatrocientos surianos. Subir sus escalones era repetir esa batalla.</p>
+    <p>Al pie de la escalinata quedaba la <strong>Coyolxauhqui</strong>: un disco de piedra, redondo como el sol, como testimonio de lo vencido.</p>
+    <p class="destacado">Tu medalla ocupa ese lugar.</p>
+    <p>El maratón sale de noche y termina con el sol en alto. Los mexicas sostenían que los guerreros caídos escoltaban al sol precisamente en ese tramo, del amanecer al mediodía. Cuarenta y dos kilómetros después, tú entraste al Zócalo por tu propio pie.</p>
+  </section>
+
+  <div class="regla"></div>
+
+  <section>
+    <h2>La carrera</h2>
+    <ul class="lista">
+      <li><span class="k">Edición</span><span class="v">XLIII · 2026</span></li>
+      <li><span class="k">Distancia</span><span class="v">42.195 km</span></li>
+      <li><span class="k">Salida</span><span class="v">Av. Insurgentes, entre la Biblioteca Central y el Estadio Olímpico de CU</span></li>
+      <li><span class="k">Meta</span><span class="v">Plancha del Zócalo, entrando por 20 de Noviembre</span></li>
+      <li><span class="k">Oleadas</span><span class="v">De 5:45 a 6:30 h</span></li>
+      <li><span class="k">Altitud</span><span class="v">~2,240 m sobre el nivel del mar</span></li>
+      <li><span class="k">Corredores</span><span class="v">Cerca de 30,000</span></li>
+    </ul>
+  </section>
+
+  <div class="regla"></div>
+
+  <section>
+    <h2>Lo que traes colgado</h2>
+    <p>La medalla de esta edición está construida sobre iconografía mexica. Esto es lo que ves en ella:</p>
+    <div class="simbolos">
+      <article class="s-sol"><h3>Piedra del Sol</h3><p>El disco que ordena la pieza. El mismo monolito que salió del Zócalo, a unos pasos de tu meta.</p></article>
+      <article class="s-ser"><h3>Uróboro y Quetzalcóatl</h3><p>La serpiente que se muerde la cola rodea la medalla: el ciclo que se cierra donde empezó.</p></article>
+      <article class="s-ajo"><h3>Ajolote</h3><p>En el otro extremo de la serpiente. El animal que solo existe en los canales de esta ciudad y en ningún otro lugar del mundo.</p></article>
+      <article class="s-esp"><h3>El espejo</h3><p>Al centro, para que el reflejo que aparece seas tú. Es la única parte de la medalla que cambia según quién la mire.</p></article>
+    </div>
+  </section>
+
+  <div class="marca-pie">
+    <p class="logo">KitsuneLab 3D</p>
+    <p>Este porta medallas fue diseñado e impreso en 3D en la Ciudad de México. El chip que acabas de leer vive dentro de la pieza.</p>
+  </div>
+
+  <div class="greca" aria-hidden="true">
+    <svg viewBox="0 0 240 15" preserveAspectRatio="none">
+      <rect width="240" height="15" fill="url(#gr)"/>
+    </svg>
+  </div>
+
+  <div id="gen">
+    <p class="demo-aviso">Vista de demostración · esta sección no la ve el cliente</p>
+    <h2>Generador de enlace</h2>
+    <p>Llena los datos del corredor y copia la liga. Eso es lo único que grabas en el chip NFC — la página es siempre la misma.</p>
+
+    <div class="campo"><label for="f-n">Nombre</label><input id="f-n" type="text" value="Luis Ángel" autocomplete="off"></div>
+    <div class="campo"><label for="f-t">Tiempo oficial · hh:mm:ss</label><input id="f-t" type="text" value="04:12:36" inputmode="numeric" autocomplete="off"></div>
+    <div class="campo"><label for="f-d">Dorsal</label><input id="f-d" type="text" value="12480" inputmode="numeric" autocomplete="off"></div>
+    <div class="campo"><label for="f-c">Categoría</label><input id="f-c" type="text" value="Libre varonil" autocomplete="off"></div>
+
+    <div class="botones">
+      <button id="b-gen" type="button">Generar enlace</button>
+      <button id="b-copy" class="sec" type="button">Copiar</button>
+      <button id="b-ver" class="sec" type="button">Ver resultado</button>
+    </div>
+    <div id="salida">El enlace aparece aquí.</div>
+    <p id="aviso-copia"></p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var tieneDatos = q.has('n') || q.has('t');
+
+  function val(k, def){ var v = q.get(k); return (v && v.trim()) ? v.trim() : def; }
+
+  function seg(t){
+    var p = String(t).split(':').map(function(x){ return parseInt(x,10); });
+    if(p.some(isNaN)) return NaN;
+    if(p.length === 3) return p[0]*3600 + p[1]*60 + p[2];
+    if(p.length === 2) return p[0]*60 + p[1];
+    return NaN;
+  }
+  function mmss(s){
+    var m = Math.floor(s/60), r = Math.round(s%60);
+    if(r === 60){ m++; r = 0; }
+    return m + ':' + (r<10 ? '0'+r : r);
+  }
+
+  var DIST = 42.195;
+  var nombre = val('n','Luis Ángel');
+  var tiempo = val('t','04:12:36');
+  var dorsal = val('d','12480');
+  var categ  = val('c','Libre varonil');
+
+  document.getElementById('nombre').textContent = nombre;
+  document.getElementById('tiempo').textContent = tiempo;
+  document.getElementById('dorsal').textContent = dorsal;
+  document.getElementById('categoria').textContent = categ;
+  document.title = nombre + ' · Maratón CDMX 2026';
+
+  var s = seg(tiempo);
+  if(isFinite(s) && s > 0){
+    document.getElementById('ritmo').innerHTML = mmss(s/DIST) + ' <small>min/km</small>';
+    document.getElementById('vel').innerHTML = (DIST/(s/3600)).toFixed(2) + ' <small>km/h</small>';
+  } else {
+    document.getElementById('ritmo').textContent = '—';
+    document.getElementById('vel').textContent = '—';
+  }
+
+  if(!tieneDatos){
+    var gen = document.getElementById('gen');
+    gen.classList.add('on');
+
+    var base = location.origin + location.pathname;
+    var salida = document.getElementById('salida');
+    var aviso  = document.getElementById('aviso-copia');
+
+    function construir(){
+      var p = new URLSearchParams();
+      p.set('n', document.getElementById('f-n').value.trim());
+      p.set('t', document.getElementById('f-t').value.trim());
+      p.set('d', document.getElementById('f-d').value.trim());
+      p.set('c', document.getElementById('f-c').value.trim());
+      return base + '?' + p.toString();
+    }
+
+    document.getElementById('b-gen').addEventListener('click', function(){
+      salida.textContent = construir();
+      aviso.textContent = 'Listo. Selecciona el texto o usa Copiar.';
+    });
+
+    document.getElementById('b-copy').addEventListener('click', function(){
+      var url = construir();
+      salida.textContent = url;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){
+          aviso.textContent = 'Copiado al portapapeles.';
+        }, function(){
+          aviso.textContent = 'No se pudo copiar. Selecciona el texto de arriba.';
+        });
+      } else {
+        aviso.textContent = 'Selecciona el texto de arriba para copiarlo.';
+      }
+    });
+
+    document.getElementById('b-ver').addEventListener('click', function(){
+      location.href = construir();
+    });
+  }
+})();
+</script>
+</body>
+</html>
